@@ -1,11 +1,11 @@
 <h1>Hello</h1>
 <p>
   <% if current_user %>
-    <%= link_to 'Sign out', sign_out_path %>
+    <%= link_to 'Sign out', sign_out_path, method: :delete %>
     <ul>
       <li><%= current_user['nickname'] %></li>
       <li><%= image_tag current_user['image'] %></li>
-      <li><%= link_to current_user['urls']['Profile'] %></li>
+      <li><%= link_to current_user['urls']['Profile'], current_user['urls']['Profile'] %></li>
     </ul>
   <% else %>
     <%= link_to 'Sign in using Steam', steam_sign_in_path %>
